@@ -25,9 +25,26 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-
+                    TopBar()
                 }
             }
         }
     }
+}
+
+@Composable
+fun TopBar() {
+    Column(modifier = Modifier
+        .fillMaxWidth()
+    ) {
+        TopAppBar(
+            title = { Text(text = stringResource(id = R.string.todo_list))},
+        )
+    }
+}
+
+@Preview
+@Composable
+fun TopBarPreview() {
+    TopBar()
 }

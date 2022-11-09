@@ -43,8 +43,21 @@ fun TopBar() {
     }
 }
 
+@Composable
+fun TaskAddBtn() {
+    FloatingActionButton(onClick = { /*TODO*/ }) {
+        Icon(imageVector = Icons.Default.Add, contentDescription = "追加")
+    }
+}
+
 @Preview
 @Composable
 fun TopBarPreview() {
     TopBar()
+}
+
+@Preview
+@Composable
+fun TaskAddBtnPreview() {
+    TaskAddBtn()
 }

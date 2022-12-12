@@ -6,10 +6,11 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -51,7 +52,16 @@ fun TopBar() {
         .fillMaxWidth()
     ) {
         TopAppBar(
-            title = { Text(text = stringResource(id = R.string.todo_list))},
+            title = { Text(text = stringResource(id = R.string.yarukoto))},
+            actions = {
+                IconButton(onClick = { /*TODO*/ }) {
+                    Icon(imageVector = Icons.Default.Search, contentDescription = "さがす")
+                }
+                IconButton(onClick = { /*TODO*/ }) {
+                    Icon(imageVector = Icons.Default.MoreVert, contentDescription = "もっと")
+                    
+                }
+            }
         )
     }
 }
@@ -69,11 +79,49 @@ fun HomeScreen(modifier: Modifier = Modifier) {
 fun TaskAddBtn() {
     Scaffold(floatingActionButton = {
         FloatingActionButton(
-            onClick = { /*TODO*/ }
+            onClick = {
+
+            }
         ) {
             Icon(imageVector = Icons.Default.Add, contentDescription = "追加")
         }
     }) {
+
+    }
+}
+
+@Composable
+fun BottomSheetDialogScreen() {
+    Surface(color = MaterialTheme.colors.background) {
+        var taskName by remember { mutableStateOf("") }
+        var taskScript by remember { mutableStateOf("") }
+
+        Column(modifier = Modifier.fillMaxSize()) {
+            OutlinedTextField(
+                value = taskName,
+                onValueChange = {taskName = it},
+                label = { Text(text = "タスク名")},
+                modifier = Modifier.fillMaxWidth()
+            )
+            OutlinedTextField(
+                value = taskScript,
+                onValueChange = {taskScript = it},
+                label = { Text(text = "説明")}
+            )
+            Row() {
+                Button(onClick = { /*TODO*/ }) {
+                    Text(text = "今日")
+                }
+                Button(onClick = { /*TODO*/ }) {
+                    Text(text = "やること")
+                }
+            }
+            Row() {
+                Button(onClick = { /*TODO*/ }) {
+                    Icon(imageVector = Icons.Default.Place, contentDescription = "ラベル")
+                }
+            }
+        }
 
     }
 }
@@ -110,5 +158,11 @@ fun TopBarPreview() {
 @Composable
 fun TaskAddBtnPreview() {
     TaskAddBtn()
+}
+
+@Preview
+@Composable
+fun BottomSheetDialogScreenPreview() {
+    BottomSheetDialogScreen()
 }
 

@@ -10,6 +10,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
+import androidx.compose.material.icons.outlined.Lock
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -118,9 +119,22 @@ fun BottomSheetDialogScreen() {
             }
             Row() {
                 Button(onClick = { /*TODO*/ }) {
-                    Icon(imageVector = Icons.Default.Place, contentDescription = "ラベル")
+                    Icon(imageVector = Icons.Outlined.Lock, contentDescription = "ラベル")
+                }
+                Button(onClick = { /*TODO*/ }) {
+                    Icon(imageVector = Icons.Outlined.Lock, contentDescription = "ラベル")
+                }
+                Button(onClick = { /*TODO*/ }) {
+                    Icon(imageVector = Icons.Outlined.Lock, contentDescription = "ラベル")
+                }
+                Button(onClick = { /*TODO*/ }) {
+                    Icon(imageVector = Icons.Outlined.Lock, contentDescription = "ラベル")
+                }
+                Button(onClick = { /*TODO*/ }) {
+                    Icon(imageVector = Icons.Outlined.Lock, contentDescription = "ラベル")
                 }
             }
+
         }
 
     }

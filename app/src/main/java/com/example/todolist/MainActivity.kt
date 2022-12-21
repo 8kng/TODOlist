@@ -71,17 +71,18 @@ fun TopBar() {
 fun HomeScreen(modifier: Modifier = Modifier) {
     Column(modifier) {
         Spacer(modifier = Modifier.height(16.dp))
-        TaskAddBtn()
+        FABBtn()
         Spacer(modifier = Modifier.height(16.dp))
     }
 }
 
+//タスク追加ボタンの実装
 @Composable
-fun TaskAddBtn() {
+fun FABBtn() {
     Scaffold(floatingActionButton = {
         FloatingActionButton(
             onClick = {
-
+                //BottomSheetDialogScreen()
             }
         ) {
             Icon(imageVector = Icons.Default.Add, contentDescription = "追加")
@@ -171,7 +172,7 @@ fun TopBarPreview() {
 @Preview
 @Composable
 fun TaskAddBtnPreview() {
-    TaskAddBtn()
+    FABBtn()
 }
 
 @Preview
